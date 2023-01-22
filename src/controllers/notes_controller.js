@@ -1,6 +1,7 @@
 let { note_schema_validate } = require("../validators/validations");
 let {noteService } = require('../services/index')
-let {failResponse , successResponse} = require('../library/response_constants')
+let {failResponse , successResponse} = require('../library/response_constants');
+const { mongo } = require("mongoose");
 
 const controller = "[notes_controller]"
 class Notes_Controller {
@@ -12,7 +13,7 @@ class Notes_Controller {
       if (!user) {
         return res.status(400).send(failResponse.USER_NOT_EXISTS);
       }
-      query = { user: user.id }
+      query = { user: user.id}
       notes = await noteService.find(query);
       return res.status(200).json(notes);
     } catch (err) {
@@ -35,7 +36,9 @@ class Notes_Controller {
         description: req.body.description,
         tag: req.body.tag,
       }
+      // console.log("Query--->",query)
       created_note = await noteService.create(query);
+      // console.log("creatednote-->",created_note)
       return res.status(200).json(created_note);
     } catch (err) {
       console.log(`Error : ${method} ${controller}`, err);

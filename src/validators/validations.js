@@ -17,7 +17,7 @@ let signin_schema = joi.object({
 });
 
 let note_schema_validate = joi.object({
-  title: joi.string().min(4).required(),
+  title: joi.string().min(5).required(),
   description: joi.string().min(5).required(),
   tag: joi.string()
 });

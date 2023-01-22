@@ -1,15 +1,15 @@
 let failResponse = {
-    USER_EXISTS : {msg : 'User with this email already exists!'},
-    USER_NOT_EXISTS : {msg : "User Not Found!"},
-    TOKEN_INVALID : {msg : "Please authenticate using a valid token!"},
-    INVALID_USER : {msg : "Invalid User!"},
-    NOT_FOUND : {msg : 'Not Found!'}
+    USER_EXISTS : 'User with this email already exists!',
+    USER_NOT_EXISTS : "User Not Found!",
+    TOKEN_INVALID : "Please authenticate using a valid token!",
+    INVALID_USER : "Invalid User!",
+    NOT_FOUND : 'Not Found!'
 }
 
 let successResponse = {
-    SUCCESS_CREATE: {msg : "Successfully created!"},
-    SUCCESS_UPDATE: {msg : "Successfully updated!"},
-    SUCCESS_DELETE: {msg : "Successfully deleted!"}
+    SUCCESS_CREATE: "Successfully created!",
+    SUCCESS_UPDATE: "Successfully updated!",
+    SUCCESS_DELETE: "Successfully deleted!"
 }
 
 
